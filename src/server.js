@@ -8,6 +8,8 @@ const app = express();
 
 const dataBaseConfig = require("./config/database");
 
+isDev = process.env.NODE_ENV != "development";
+
 mongoose.connect(dataBaseConfig.uri, {
   useCreateIndex: true,
   useNewUrlParser: true,
