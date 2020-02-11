@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
@@ -5,7 +6,9 @@ const cors = require("cors");
 
 const app = express();
 
-mongoose.connect("mongodb://localhost:27017/umadep", {
+const dataBaseConfig = require("./config/database");
+
+mongoose.connect(dataBaseConfig.uri, {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true
