@@ -2,7 +2,7 @@ const Message = require("../models/Message");
 
 class MessageContrller {
   async index(req, res) {
-    const messages = await Message.find();
+    const messages = await Message.find().sort("-createdAt");
 
     return res.json(messages);
   }
